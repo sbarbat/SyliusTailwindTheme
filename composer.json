@@ -1,0 +1,16 @@
+{
+    "name": "sbarbat/sylius-tailwind-theme",
+    "description": "Sylius Tailwind CSS Theme",
+    "authors": [
+        {
+            "name": "Santiago Barbat",
+            "email": "barbatsan@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "Sylius Tailwind CSS Theme"
+        }
+    }
+}

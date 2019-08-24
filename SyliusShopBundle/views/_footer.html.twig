@@ -1,0 +1,30 @@
+<footer id="footer" class="w-full bg-gray-900 text-gray-200 p-4 pin-b">
+    <div class="flex flex-col sm:flex-row">
+        {{ sonata_block_render_event('sylius.shop.layout.before_footer') }}
+
+        <div class="w-full mb-2 sm:w-1/5">
+            <h4 class="font-bold mb-2">{{ 'sylius.ui.your_store'|trans }}</h4>
+            <ul>
+                <a href="#" class="mb-2">{{ 'sylius.ui.about'|trans }}</a>
+                <a href="#" class="mb-2">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
+                <a href="#" class="mb-2">{{ 'sylius.ui.privacy_policy'|trans }}</a>
+                <a href="{{ path('sylius_shop_contact_request') }}" class="mb-2">{{ 'sylius.ui.contact_us'|trans }}</a>
+            </ul>
+        </div>
+        <div class="w-full mb-2 sm:w-1/5">
+            <h4 class="font-bold mb-2">{{ 'sylius.ui.customer_care'|trans  }}</h4>
+            <ul>
+                <li><a href="{{ path('sylius_shop_contact_request') }}" class="mb-2">{{ 'sylius.ui.contact_us'|trans  }}</a></li>
+                <li><a href="#" class="mb-2">{{ 'sylius.ui.faqs'|trans  }}</a></li>
+                <li><a href="#" class="mb-2">{{ 'sylius.ui.delivery_and_shipping'|trans  }}</a></li>
+                <li><a href="#" class="mb-2">{{ 'sylius.ui.returns_policy'|trans  }}</a></li>
+            </ul>
+        </div>
+        <div class="w-full sm:w-3/5">
+            <h4 class="font-bold mb-2">&copy; {{ 'sylius.ui.your_store'|trans }}</h4>
+            <p>{{ 'sylius.ui.powered_by'|trans }} <a href="http://sylius.com" target="_blank" style="color: #1abb9c;">Sylius</a>.</p>
+        </div>
+
+        {{ sonata_block_render_event('sylius.shop.layout.after_footer') }}
+    </div>
+</footer>
