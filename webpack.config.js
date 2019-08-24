@@ -17,6 +17,7 @@ Encore
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false
     })
+    .enableVueLoader()
     .enableSourceMaps(!isProduction)
     .enableVersioning(isProduction)
     .enableBuildNotifications(!isProduction)

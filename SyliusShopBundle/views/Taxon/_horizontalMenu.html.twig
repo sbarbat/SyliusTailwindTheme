@@ -1,0 +1,35 @@
+{% macro item(taxon) %}
+    {% import _self as macros %}
+
+    {# NEED TO ADD DROPDOWN FEATURE FOR MENUS #}
+    <a 
+        class="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-gray-700 mr-4" 
+        href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}"
+    >
+        {{ taxon.name }}
+    </a>
+
+    {# {% if taxon.children|length > 0 %}
+        <div class="ui dropdown item">
+            <span class="text">{{ taxon.name }}</span>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                {% for childTaxon in taxon.children %}
+                    {{ macros.item(childTaxon) }}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="item">{{ taxon.name }}</a>
+    {% endif %} #}
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% if taxons|length > 0 %}
+<div class="">
+    {% for taxon in taxons %}
+        {{ macros.item(taxon) }}
+    {% endfor %}
+</div>
+{% endif %}

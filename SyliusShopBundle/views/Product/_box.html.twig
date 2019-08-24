@@ -1,0 +1,27 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+{{ sonata_block_render_event('sylius.shop.product.index.before_box', {'product': product}) }}
+
+{# Purgecss sm:w-1/2 sm:w-1/3 sm:w-1/4 sm:w-1/5 sm:w-1/6 #}
+<div class="w-full sm:w-1/{{ count }}">
+    <div class="m-4 rounded overflow-hidden shadow-lg">
+        <a href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">
+            {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': product, 'class': 'rounded-t'} %}
+        </a>
+        <div class="px-4 py-4">
+            <a class="font-bold text-xl" href="{{ path('sylius_shop_product_show', {'slug': product.slug, '_locale': product.translation.locale}) }}">{{ product.name|title }}</a>
+            <p class="text-gray-700 text-base mt-2">
+                {% if not product.variants.empty() %}
+                    {{ money.calculatePrice(product|sylius_resolve_variant) }}
+                {% endif %}
+            </p>
+        </div>
+        <div class="px-4 py-4 pt-0">
+            {% for t in product.productTaxons %}
+                <a href="{{ path('sylius_shop_product_index', {'slug': t.taxon.slug, '_locale': t.taxon.translation.locale}) }}" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mt-1">#{{ t.taxon.name|lower }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{{ sonata_block_render_event('sylius.shop.product.index.after_box', {'product': product}) }}

@@ -1,7 +1,7 @@
 <nav class="flex items-center justify-between flex-wrap bg-gray-200 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="{{ path('sylius_shop_homepage') }}">
-            <img src="{{ asset('assets/shop/img/logo.png') }}" alt="Sylius logo" class="h-12"/>
+            <img src="{{ asset('assets/shop/img/logo.png') }}" alt="Sylius logo" class="h-8"/>
             {# <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span> #}
         </a>
     </div>
@@ -15,33 +15,10 @@
         <div class="text-sm lg:flex-grow">
             {{ sonata_block_render_event('sylius.shop.layout.header') }}
 
-            {# <a class="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-gray-700 mr-4" href="#responsive-header">
-                Docs
-            </a>
-            <a class="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-gray-700 mr-4" href="#responsive-header">
-                Examples
-            </a>
-            <a class="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-gray-700" href="#responsive-header">
-                Blog
-            </a> #}
+            {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
         </div>
         <div>
             {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
         </div>
     </div>
 </nav>
-
-
-<div class="ui basic segment">
-    <div class="ui three column stackable grid">
-        <div class="column">
-            
-        </div>
-        <div class="column">
-            {{ sonata_block_render_event('sylius.shop.layout.header') }}
-        </div>
-        <div class="right aligned column">
-            {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
-        </div>
-    </div>
-</div>

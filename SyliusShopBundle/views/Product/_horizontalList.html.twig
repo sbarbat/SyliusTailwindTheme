@@ -1,0 +1,7 @@
+{% set count = products|length %}
+
+<div class="flex flex-col sm:flex-row">
+    {% for product in products %}
+        {% include '@SyliusShop/Product/_box.html.twig' %}
+    {% endfor %}
+</div>

@@ -23,7 +23,7 @@
 
     ```bash
     yarn
-    yarn add --dev @symfony/webpack-encore sass-loader node-sass tailwindcss autoprefixer postcss-loader webpack-notifier purgecss-webpack-plugin glob-all lodash path
+    yarn add --dev @symfony/webpack-encore sass-loader node-sass tailwindcss autoprefixer postcss-loader webpack-notifier purgecss-webpack-plugin glob-all lodash path vue vue-loader vue-template-compiler
     ```
 
 4. Create postcss config file

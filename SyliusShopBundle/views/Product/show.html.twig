@@ -3,36 +3,43 @@
 {% block content %}
     {% include '@SyliusShop/Product/Show/_breadcrumb.html.twig' %}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.before_images', {'product': product}) }}
+    <div class="flex flex-col sm:flex-row rounded shadow-lg bg-white">
+        <div class="w-full sm:w-1/2 p-2 pt-0 sm:p-4">
+            {{ sonata_block_render_event('sylius.shop.product.show.before_images', {'product': product}) }}
 
-    {% include '@SyliusShop/Product/Show/_images.html.twig' %}
+            {% include '@SyliusShop/Product/Show/_images.html.twig' %}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_images', {'product': product}) }}
-    {% include '@SyliusShop/Product/Show/_header.html.twig' %}
+            {{ sonata_block_render_event('sylius.shop.product.show.after_images', {'product': product}) }}
+        </div>
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_product_header', {'product': product}) }}
+        <div class="w-full sm:w-1/2 p-2 pt-0 sm:p-4">
+            {% include '@SyliusShop/Product/Show/_header.html.twig' %}
 
-    {% include '@SyliusShop/Product/Show/_reviews.html.twig' %}
+            {{ sonata_block_render_event('sylius.shop.product.show.after_product_header', {'product': product}) }}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_reviews', {'product': product}) }}
+            {% include '@SyliusShop/Product/Show/_reviews.html.twig' %}
 
-    {% if not product.variants.empty() %}
-        {% include '@SyliusShop/Product/Show/_price.html.twig' %}
-    {% endif %}
-    {{ product.code }}
+            {{ sonata_block_render_event('sylius.shop.product.show.after_reviews', {'product': product}) }}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_price', {'product': product}) }}
+            {% if not product.variants.empty() %}
+                {% include '@SyliusShop/Product/Show/_price.html.twig' %}
+            {% endif %}
+            {{ product.code }}
 
-    {{ product.shortDescription }}
+            {{ sonata_block_render_event('sylius.shop.product.show.after_price', {'product': product}) }}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_description', {'product': product}) }}
+            {{ product.shortDescription }}
 
-    {% if product.isConfigurable() and product.getVariantSelectionMethod() == 'match' and not product.variants.empty() %}
-        {% include '@SyliusShop/Product/Show/_variantsPricing.html.twig' with {'pricing': sylius_product_variant_prices(product, sylius.channel)} %}
-    {% endif %}
-    {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+            {{ sonata_block_render_event('sylius.shop.product.show.after_description', {'product': product}) }}
 
-    {{ sonata_block_render_event('sylius.shop.product.show.after_add_to_cart', {'product': product}) }}
+            {% if product.isConfigurable() and product.getVariantSelectionMethod() == 'match' and not product.variants.empty() %}
+                {% include '@SyliusShop/Product/Show/_variantsPricing.html.twig' with {'pricing': sylius_product_variant_prices(product, sylius.channel)} %}
+            {% endif %}
+            {% include '@SyliusShop/Product/Show/_inventory.html.twig' %}
+
+            {{ sonata_block_render_event('sylius.shop.product.show.after_add_to_cart', {'product': product}) }}
+        </div>
+    </div>
 
     {{ sonata_block_render_event('sylius.shop.product.show.before_tabs', {'product': product}) }}
 
