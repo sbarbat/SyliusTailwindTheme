@@ -6,8 +6,10 @@
     It allows to swap to Tailwind-based theme separately in each channel.
 </p>
 
-Installation
-------------
+*This theme is under development, feel free to help building the tailwind views! 😁*
+
+
+#Installation
 
 1. Copy files from repository to `./themes/TailwindTheme`
 
