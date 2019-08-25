@@ -24,7 +24,7 @@
 
     ```bash
     yarn
-    yarn add --dev @symfony/webpack-encore sass-loader node-sass tailwindcss autoprefixer postcss-loader webpack-notifier purgecss-webpack-plugin glob-all lodash path vue vue-loader vue-template-compiler
+    yarn add --dev @symfony/webpack-encore sass-loader node-sass tailwindcss autoprefixer postcss-loader webpack-notifier purgecss-webpack-plugin glob-all lodash path
     ```
 
 4. Create postcss config file
@@ -72,16 +72,6 @@
     
     webpack_encore:
         output_path: '%kernel.project_dir%/public/tailwind-theme'
-    ```
-
-    ```bash
-    # ./.babel_rc
-    
-    {
-        "presets": [
-            ["env"]
-        ]
-    }
     ```
 
 7. To build the assets, run one of the following commands
