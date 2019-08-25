@@ -73,6 +73,16 @@
         output_path: '%kernel.project_dir%/public/tailwind-theme'
     ```
 
+    ```bash
+    # ./.babel_rc
+    
+    {
+        "presets": [
+            ["env"]
+        ]
+    }
+    ```
+
 7. To build the assets, run one of the following commands
 
     ```bash

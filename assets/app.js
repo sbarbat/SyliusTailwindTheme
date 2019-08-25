@@ -2,9 +2,16 @@ require('./main.scss')
 
 import Vue from 'vue'
 
-import Test from './components/Test'
+import CartWidget from './components/CartWidget'
 
 new Vue({
-  el: '#app',
-  components: { Test }
+    el: '#app',
+    data() {
+        return {
+            cartWidgetOpened: false
+        }
+    },
+    components: {
+        CartWidget
+    }
 })

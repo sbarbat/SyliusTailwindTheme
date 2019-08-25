@@ -1,11 +1,13 @@
 {% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
 
-<button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+<button @click="cartWidgetOpened = !cartWidgetOpened" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
     <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
     <span>{{ money.convertAndFormat(cart.itemsTotal) }} {% transchoice cart.items|length %}sylius.ui.item.choice{% endtranschoice %}</span>
 
     {{ sonata_block_render_event('sylius.shop.partial.cart.summary.after_widget_content', {'cart': cart}) }}
 </button>
+
+<cart-widget :opened="cartWidgetOpened"></cart-widget>
 {# <div id="sylius-cart-button" class="ui circular cart button">
     {{ sonata_block_render_event('sylius.shop.partial.cart.summary.before_widget_content', {'cart': cart}) }}
 
