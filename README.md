@@ -1,13 +1,13 @@
 <p align="center">
     <img width="33.333%" src="https://sylius.com/wp-content/uploads/2018/07/logowhite.jpg" />
     <img width="33.333%" src="https://i.imgur.com/EVV4jS8.png" />
-    <img width="33.333%" src="https://miro.medium.com/max/1032/1*OrjCKmou1jT4It5so5gvOA.jpeg" />
+    <!-- <img width="33.333%" src="https://miro.medium.com/max/1032/1*OrjCKmou1jT4It5so5gvOA.jpeg" /> -->
     <h1 align="center">Sylius Tailwind Theme</h1>
     <p align="center">Sylius Tailwind theme with build process based on <a target="_blank" href="https://symfony.com/doc/current/frontend.html">Webpack Encore.</a></p>
     It allows to swap to Tailwind-based theme separately in each channel.
 </p>
 
-**This theme is under development, feel free to help building the tailwind views and vue components! 😁**
+**This theme is under development, feel free to help building the tailwind views! 😁**
 
 
 # Installation

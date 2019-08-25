@@ -17,11 +17,6 @@ Encore
     .enableSassLoader(function (options) {}, {
         resolveUrlLoader: false
     })
-    .enableVueLoader(function(options) {
-        options.loaders = {
-            js: { loader: 'babel-loader', options: { presets: ['env'] } }
-        };
-    })
     .enableSourceMaps(!isProduction)
     .enableVersioning(isProduction)
     .enableBuildNotifications(!isProduction)
