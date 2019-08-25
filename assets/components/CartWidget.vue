@@ -4,6 +4,8 @@
         <div v-if="opened" class="w-64 max-w-4xl min-h-screen fixed top-0 right-0 p-4 bg-gray-300 text-gray-800">
             <div @click="opened = !opened" class="text-right p-4 cursor-pointer font-thin text-2xl">x</div>
             
+            sylius_admin_api_cart_show
+            
             This is the widget
         </div>
         </transition>
